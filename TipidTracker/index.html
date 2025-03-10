@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TipidTracker</title> <!-- Add the title here -->
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    
+<body>
+
+    <header>
+        <h1>TipidTracker</h1> <!-- Title displayed in the app -->
+    </header>
+    <div class="tabs">
+        <button class="tab-button active" onclick="switchTab('track-expenses')">Track Expenses</button>
+        <button class="tab-button" onclick="switchTab('manage-categories')">Manage Categories</button>
+        <button class="tab-button" onclick="switchTab('expense-list')">Expense List</button>
+    </div>
+
+    <div id="track-expenses" class="tab-content active">
+        <h2>Track Expenses</h2>
+        <input type="text" id="expense-name" placeholder="Expense Name">
+        <input type="number" id="expense-amount" placeholder="Amount">
+        <select id="expense-category"></select>
+        <button onclick="addExpense()">Add Expense</button>
+
+        <h3>Budget Overview</h3>
+        <div id="budget-bars"></div>
+    </div>
+
+    <div id="manage-categories" class="tab-content">
+        <h2>Manage Categories</h2>
+        <input type="text" id="new-category" placeholder="New Category">
+        <button onclick="addCategory()">Add Category</button>
+
+        <h3>Set Budget</h3>
+        <select id="budget-category"></select>
+        <input type="number" id="budget-amount" placeholder="Budget Amount">
+        <button onclick="setBudget()">Set Budget</button>
+
+        <h3>Delete Category</h3>
+        <select id="delete-category"></select>
+        <button onclick="deleteCategory()">Delete</button>
+    </div>
+
+    <div id="expense-list" class="tab-content">
+        <h2>Expense List</h2>
+        <ul id="expense-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
